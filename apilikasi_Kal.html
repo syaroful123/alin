@@ -381,9 +381,274 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="page-rank">
 <h1>Page rank<a class="headerlink" href="#page-rank" title="Link to this heading">#</a></h1>
+<p><strong>Pagerank adalah algoritma yang digunakan oleh mesin pencari seperti Google untuk menilai dan mengurutkan halaman web berdasarkan pentingnya mereka dalam hasil pencarian. Algoritma ini dinamai dari Larry Page</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">([</span><span class="mi">0</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="p">,</span> <span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">V0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mf">0.25</span><span class="p">],[</span><span class="mf">0.25</span><span class="p">],[</span><span class="mf">0.25</span><span class="p">],[</span><span class="mf">0.25</span><span class="p">]])</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V1</span><span class="p">)</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V2</span><span class="p">)</span>
+<span class="n">V3</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V3</span><span class="p">)</span>
+<span class="n">V4</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V4</span><span class="p">)</span>
+<span class="n">V5</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V5</span><span class="p">)</span>
+<span class="n">V6</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V6</span><span class="p">)</span>
+<span class="n">V7</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V7</span><span class="p">)</span>
+<span class="n">V8</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V7</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V8</span><span class="p">)</span>
+<span class="n">V0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mf">0.3</span><span class="p">],[</span><span class="mf">0.2</span><span class="p">],[</span><span class="mf">0.3</span><span class="p">],[</span><span class="mf">0.2</span><span class="p">]])</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V1</span><span class="p">)</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V2</span><span class="p">)</span>
+<span class="n">V3</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V3</span><span class="p">)</span>
+<span class="n">V4</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V4</span><span class="p">)</span>
+<span class="n">V5</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V5</span><span class="p">)</span>
+<span class="n">V6</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V6</span><span class="p">)</span>
+<span class="n">V7</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@V6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V7</span><span class="p">)</span>
+<span class="n">V8</span> <span class="o">=</span><span class="n">A</span><span class="nd">@V7</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.375     ]
+ [0.08333333]
+ [0.33333333]
+ [0.20833333]]
+[[0.4375    ]
+ [0.125     ]
+ [0.27083333]
+ [0.16666667]]
+[[0.35416667]
+ [0.14583333]
+ [0.29166667]
+ [0.20833333]]
+[[0.39583333]
+ [0.11805556]
+ [0.29513889]
+ [0.19097222]]
+[[0.390625  ]
+ [0.13194444]
+ [0.28645833]
+ [0.19097222]]
+[[0.38194444]
+ [0.13020833]
+ [0.29166667]
+ [0.19618056]]
+[[0.38975694]
+ [0.12731481]
+ [0.29050926]
+ [0.19241898]]
+[[0.38671875]
+ [0.12991898]
+ [0.28978588]
+ [0.19357639]]
+[[0.4]
+ [0.1]
+ [0.3]
+ [0.2]]
+[[0.4       ]
+ [0.13333333]
+ [0.28333333]
+ [0.18333333]]
+[[0.375     ]
+ [0.13333333]
+ [0.29166667]
+ [0.2       ]]
+[[0.39166667]
+ [0.125     ]
+ [0.29166667]
+ [0.19166667]]
+[[0.3875    ]
+ [0.13055556]
+ [0.28888889]
+ [0.19305556]]
+[[0.38541667]
+ [0.12916667]
+ [0.29097222]
+ [0.19444444]]
+[[0.38819444]
+ [0.12847222]
+ [0.29027778]
+ [0.19305556]]
+[[0.38680556]
+ [0.12939815]
+ [0.29016204]
+ [0.19363426]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mf">0.3</span><span class="p">],[</span><span class="mf">0.2</span><span class="p">],[</span><span class="mf">0.3</span><span class="p">],[</span><span class="mf">0.2</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;matrik A:</span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">jumlah_matriks</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">toleransi</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="k">def</span> <span class="nf">hitung_error</span><span class="p">(</span><span class="n">matriks1</span><span class="p">,</span> <span class="n">matriks2</span><span class="p">):</span>
+    <span class="n">error_absolut</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">matriks1</span> <span class="o">-</span> <span class="n">matriks2</span><span class="p">)</span>
+    <span class="n">error_relatif</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">matriks1</span> <span class="o">-</span> <span class="n">matriks2</span><span class="p">)</span> <span class="o">/</span> <span class="n">matriks1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">error_absolut</span><span class="p">,</span> <span class="n">error_relatif</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">jumlah_matriks</span><span class="p">):</span>
+    <span class="n">matriks_acak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">([[</span><span class="mf">0.25</span><span class="p">],[</span><span class="mf">0.25</span><span class="p">],[</span><span class="mf">0.25</span><span class="p">],[</span><span class="mf">0.25</span><span class="p">]])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;matrik acak:</span><span class="si">{</span><span class="n">matriks_acak</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Menghitung error</span>
+    <span class="n">error_absolut</span><span class="p">,</span> <span class="n">error_relatif</span> <span class="o">=</span> <span class="n">hitung_error</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">matriks_acak</span><span class="p">)</span>
+
+    <span class="n">within_tolerance</span> <span class="o">=</span> <span class="n">error_relatif</span> <span class="o">&lt;</span> <span class="n">toleransi</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matriks </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks Acak:&quot;</span><span class="p">,</span> <span class="n">matriks_acak</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error Absolut:&quot;</span><span class="p">,</span> <span class="n">error_absolut</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error Relatif:&quot;</span><span class="p">,</span> <span class="n">error_relatif</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Within Tolerance:&quot;</span><span class="p">,</span> <span class="n">within_tolerance</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrik A:[[0.3]
+ [0.2]
+ [0.3]
+ [0.2]]
+matrik acak:[[0.43908326]
+ [0.63367973]
+ [0.74998181]
+ [0.80495199]]
+
+Matriks 1:
+Matriks Acak: [[0.43908326]
+ [0.63367973]
+ [0.74998181]
+ [0.80495199]]
+Error Absolut: [[0.13908326]
+ [0.43367973]
+ [0.44998181]
+ [0.60495199]]
+Error Relatif: [[0.46361086]
+ [2.16839863]
+ [1.49993938]
+ [3.02475994]]
+Within Tolerance: [[False]
+ [False]
+ [False]
+ [False]]
+
+matrik acak:[[0.56382724]
+ [0.66736709]
+ [0.30062422]
+ [0.52146041]]
+
+Matriks 2:
+Matriks Acak: [[0.56382724]
+ [0.66736709]
+ [0.30062422]
+ [0.52146041]]
+Error Absolut: [[0.26382724]
+ [0.46736709]
+ [0.00062422]
+ [0.32146041]]
+Error Relatif: [[8.79424146e-01]
+ [2.33683547e+00]
+ [2.08073621e-03]
+ [1.60730204e+00]]
+Within Tolerance: [[False]
+ [False]
+ [ True]
+ [False]]
+
+matrik acak:[[0.8125668 ]
+ [0.62933329]
+ [0.58456881]
+ [0.97868064]]
+
+Matriks 3:
+Matriks Acak: [[0.8125668 ]
+ [0.62933329]
+ [0.58456881]
+ [0.97868064]]
+Error Absolut: [[0.5125668 ]
+ [0.42933329]
+ [0.28456881]
+ [0.77868064]]
+Error Relatif: [[1.70855601]
+ [2.14666644]
+ [0.9485627 ]
+ [3.89340318]]
+Within Tolerance: [[False]
+ [False]
+ [False]
+ [False]]
+
+matrik acak:[[0.8167731 ]
+ [0.59165059]
+ [0.82615174]
+ [0.94500292]]
+
+Matriks 4:
+Matriks Acak: [[0.8167731 ]
+ [0.59165059]
+ [0.82615174]
+ [0.94500292]]
+Error Absolut: [[0.5167731 ]
+ [0.39165059]
+ [0.52615174]
+ [0.74500292]]
+Error Relatif: [[1.72257699]
+ [1.95825296]
+ [1.75383913]
+ [3.72501462]]
+Within Tolerance: [[False]
+ [False]
+ [False]
+ [False]]
+
+matrik acak:[[0.59160101]
+ [0.55972887]
+ [0.8557628 ]
+ [0.31916777]]
+
+Matriks 5:
+Matriks Acak: [[0.59160101]
+ [0.55972887]
+ [0.8557628 ]
+ [0.31916777]]
+Error Absolut: [[0.29160101]
+ [0.35972887]
+ [0.5557628 ]
+ [0.11916777]]
+Error Relatif: [[0.97200337]
+ [1.79864434]
+ [1.85254268]
+ [0.59583885]]
+Within Tolerance: [[False]
+ [False]
+ [False]
+ [False]]
 </pre></div>
 </div>
 </div>
