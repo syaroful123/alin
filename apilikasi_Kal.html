@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Page rank &#8212; My sample book</title>
+    <title>&lt;no title&gt; &#8212; My sample book</title>
   
   
   
@@ -176,13 +176,12 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sistemlinear.html">Penyelesaian Sistem Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aljabarmatrix.html">Aljabar Matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Matrix-Invers.html">Matrix Invers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="determinan.html">Determinant Matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Transformasii.html">Transformasi</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Page rank</a></li>
 </ul>
 
     </div>
@@ -355,7 +354,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -366,11 +367,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Page rank</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -381,8 +390,6 @@ document.write(`
                 <article class="bd-article">
                   
   <p>#Apilikasi KAL</p>
-<section class="tex2jax_ignore mathjax_ignore" id="page-rank">
-<h1>Page rank<a class="headerlink" href="#page-rank" title="Link to this heading">#</a></h1>
 <p><strong>Pagerank adalah algoritma yang digunakan oleh mesin pencari seperti Google untuk menilai dan mengurutkan halaman web berdasarkan pentingnya mereka dalam hasil pencarian. Algoritma ini dinamai dari Larry Page</strong></p>
 <p><strong>algoritma pagerank</strong></p>
 <ul class="simple">
@@ -546,117 +553,117 @@ document.write(`
  [0.2]
  [0.3]
  [0.2]]
-matrik acak:[[0.86700559]
- [0.59907485]
- [0.70939149]
- [0.77294895]]
+matrik acak:[[0.60178792]
+ [0.46085309]
+ [0.9738704 ]
+ [0.82584519]]
 
 Matriks 1:
-Matriks Acak: [[0.86700559]
- [0.59907485]
- [0.70939149]
- [0.77294895]]
-Error Absolut: [[0.56700559]
- [0.39907485]
- [0.40939149]
- [0.57294895]]
-Error Relatif: [[1.89001865]
- [1.99537426]
- [1.3646383 ]
- [2.86474473]]
+Matriks Acak: [[0.60178792]
+ [0.46085309]
+ [0.9738704 ]
+ [0.82584519]]
+Error Absolut: [[0.30178792]
+ [0.26085309]
+ [0.6738704 ]
+ [0.62584519]]
+Error Relatif: [[1.00595972]
+ [1.30426544]
+ [2.24623466]
+ [3.12922595]]
 Within Tolerance: [[False]
  [False]
  [False]
  [False]]
 
-matrik acak:[[0.62611246]
- [0.54633992]
- [0.36519594]
- [0.37768922]]
+matrik acak:[[0.74916258]
+ [0.77755378]
+ [0.72525528]
+ [0.40508681]]
 
 Matriks 2:
-Matriks Acak: [[0.62611246]
- [0.54633992]
- [0.36519594]
- [0.37768922]]
-Error Absolut: [[0.32611246]
- [0.34633992]
- [0.06519594]
- [0.17768922]]
-Error Relatif: [[1.08704155]
- [1.73169961]
- [0.21731979]
- [0.88844612]]
+Matriks Acak: [[0.74916258]
+ [0.77755378]
+ [0.72525528]
+ [0.40508681]]
+Error Absolut: [[0.44916258]
+ [0.57755378]
+ [0.42525528]
+ [0.20508681]]
+Error Relatif: [[1.49720861]
+ [2.88776888]
+ [1.41751761]
+ [1.02543407]]
 Within Tolerance: [[False]
  [False]
  [False]
  [False]]
 
-matrik acak:[[0.67148239]
- [0.51352232]
- [0.97323705]
- [0.82715471]]
+matrik acak:[[0.39872057]
+ [0.41847063]
+ [0.49264764]
+ [0.75058914]]
 
 Matriks 3:
-Matriks Acak: [[0.67148239]
- [0.51352232]
- [0.97323705]
- [0.82715471]]
-Error Absolut: [[0.37148239]
- [0.31352232]
- [0.67323705]
- [0.62715471]]
-Error Relatif: [[1.23827462]
- [1.5676116 ]
- [2.2441235 ]
- [3.13577354]]
+Matriks Acak: [[0.39872057]
+ [0.41847063]
+ [0.49264764]
+ [0.75058914]]
+Error Absolut: [[0.09872057]
+ [0.21847063]
+ [0.19264764]
+ [0.55058914]]
+Error Relatif: [[0.32906855]
+ [1.09235315]
+ [0.64215881]
+ [2.75294568]]
 Within Tolerance: [[False]
  [False]
  [False]
  [False]]
 
-matrik acak:[[0.66154544]
- [0.75453619]
- [0.28813118]
- [0.29608806]]
+matrik acak:[[0.98740895]
+ [0.62185934]
+ [0.37225908]
+ [0.59935178]]
 
 Matriks 4:
-Matriks Acak: [[0.66154544]
- [0.75453619]
- [0.28813118]
- [0.29608806]]
-Error Absolut: [[0.36154544]
- [0.55453619]
- [0.01186882]
- [0.09608806]]
-Error Relatif: [[1.20515148]
- [2.77268097]
- [0.03956273]
- [0.48044028]]
+Matriks Acak: [[0.98740895]
+ [0.62185934]
+ [0.37225908]
+ [0.59935178]]
+Error Absolut: [[0.68740895]
+ [0.42185934]
+ [0.07225908]
+ [0.39935178]]
+Error Relatif: [[2.29136315]
+ [2.10929672]
+ [0.24086361]
+ [1.99675892]]
 Within Tolerance: [[False]
  [False]
- [ True]
+ [False]
  [False]]
 
-matrik acak:[[0.52150718]
- [0.30437279]
- [0.34883471]
- [0.63809618]]
+matrik acak:[[0.30157241]
+ [0.72739276]
+ [0.37856663]
+ [0.29423181]]
 
 Matriks 5:
-Matriks Acak: [[0.52150718]
- [0.30437279]
- [0.34883471]
- [0.63809618]]
-Error Absolut: [[0.22150718]
- [0.10437279]
- [0.04883471]
- [0.43809618]]
-Error Relatif: [[0.73835725]
- [0.52186397]
- [0.16278237]
- [2.1904809 ]]
-Within Tolerance: [[False]
+Matriks Acak: [[0.30157241]
+ [0.72739276]
+ [0.37856663]
+ [0.29423181]]
+Error Absolut: [[0.00157241]
+ [0.52739276]
+ [0.07856663]
+ [0.09423181]]
+Error Relatif: [[0.00524136]
+ [2.63696382]
+ [0.26188877]
+ [0.47115907]]
+Within Tolerance: [[ True]
  [False]
  [False]
  [False]]
@@ -664,7 +671,6 @@ Within Tolerance: [[False]
 </div>
 </div>
 </div>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -711,6 +717,21 @@ Within Tolerance: [[False]
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
