@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -46,7 +46,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'apilikasi_Kal';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Transformasi" href="Transformasii.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -177,11 +176,13 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sistemlinear.html">Penyelesaian Sistem Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aljabarmatrix.html">Aljabar Matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Matrix-Invers.html">Matrix Invers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="determinan.html">Determinant Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformasii.html">Transformasi</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Page rank</a></li>
 </ul>
 
     </div>
@@ -211,9 +212,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -379,9 +380,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="page-rank">
+  <p>#Apilikasi KAL</p>
+<section class="tex2jax_ignore mathjax_ignore" id="page-rank">
 <h1>Page rank<a class="headerlink" href="#page-rank" title="Link to this heading">#</a></h1>
 <p><strong>Pagerank adalah algoritma yang digunakan oleh mesin pencari seperti Google untuk menilai dan mengurutkan halaman web berdasarkan pentingnya mereka dalam hasil pencarian. Algoritma ini dinamai dari Larry Page</strong></p>
+<p><strong>algoritma pagerank</strong></p>
+<ul class="simple">
+<li><p>caranya yag pertama buat V0 panjang matriksnya harus sama dengan matriks yang ingin dihitung angka nya bebas dengan syarat jika dijumlah harus sama dengan 1</p></li>
+<li><p>lakukan perulangan untuk mengalikan V0 dengan matriks A dan tarh hasil matriksnya di V1</p></li>
+<li><p>lakukan hingga V saat iini dengan V selanjutnya matriksnya sama(konvegen = proses pengecekan apakah sama)(equibrium = jika hasil dari konvegen sama)</p></li>
+<li><p>jika matriks V nya tidak juga sama maka ada beberapa cara yaitu:</p></li>
+<li><p>Cara untuk menghentikan iterasi adlah dengan error toleransi atau dengan pembatasan jumlah iterasi</p></li>
+<li><p>pada error dengan cara membuatt batasan perbedaan pada contoh ini batasannya 0,01 semakin kecil maka semakin mendekati kebenaran</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -535,116 +546,116 @@ document.write(`
  [0.2]
  [0.3]
  [0.2]]
-matrik acak:[[0.43908326]
- [0.63367973]
- [0.74998181]
- [0.80495199]]
+matrik acak:[[0.86700559]
+ [0.59907485]
+ [0.70939149]
+ [0.77294895]]
 
 Matriks 1:
-Matriks Acak: [[0.43908326]
- [0.63367973]
- [0.74998181]
- [0.80495199]]
-Error Absolut: [[0.13908326]
- [0.43367973]
- [0.44998181]
- [0.60495199]]
-Error Relatif: [[0.46361086]
- [2.16839863]
- [1.49993938]
- [3.02475994]]
+Matriks Acak: [[0.86700559]
+ [0.59907485]
+ [0.70939149]
+ [0.77294895]]
+Error Absolut: [[0.56700559]
+ [0.39907485]
+ [0.40939149]
+ [0.57294895]]
+Error Relatif: [[1.89001865]
+ [1.99537426]
+ [1.3646383 ]
+ [2.86474473]]
 Within Tolerance: [[False]
  [False]
  [False]
  [False]]
 
-matrik acak:[[0.56382724]
- [0.66736709]
- [0.30062422]
- [0.52146041]]
+matrik acak:[[0.62611246]
+ [0.54633992]
+ [0.36519594]
+ [0.37768922]]
 
 Matriks 2:
-Matriks Acak: [[0.56382724]
- [0.66736709]
- [0.30062422]
- [0.52146041]]
-Error Absolut: [[0.26382724]
- [0.46736709]
- [0.00062422]
- [0.32146041]]
-Error Relatif: [[8.79424146e-01]
- [2.33683547e+00]
- [2.08073621e-03]
- [1.60730204e+00]]
+Matriks Acak: [[0.62611246]
+ [0.54633992]
+ [0.36519594]
+ [0.37768922]]
+Error Absolut: [[0.32611246]
+ [0.34633992]
+ [0.06519594]
+ [0.17768922]]
+Error Relatif: [[1.08704155]
+ [1.73169961]
+ [0.21731979]
+ [0.88844612]]
+Within Tolerance: [[False]
+ [False]
+ [False]
+ [False]]
+
+matrik acak:[[0.67148239]
+ [0.51352232]
+ [0.97323705]
+ [0.82715471]]
+
+Matriks 3:
+Matriks Acak: [[0.67148239]
+ [0.51352232]
+ [0.97323705]
+ [0.82715471]]
+Error Absolut: [[0.37148239]
+ [0.31352232]
+ [0.67323705]
+ [0.62715471]]
+Error Relatif: [[1.23827462]
+ [1.5676116 ]
+ [2.2441235 ]
+ [3.13577354]]
+Within Tolerance: [[False]
+ [False]
+ [False]
+ [False]]
+
+matrik acak:[[0.66154544]
+ [0.75453619]
+ [0.28813118]
+ [0.29608806]]
+
+Matriks 4:
+Matriks Acak: [[0.66154544]
+ [0.75453619]
+ [0.28813118]
+ [0.29608806]]
+Error Absolut: [[0.36154544]
+ [0.55453619]
+ [0.01186882]
+ [0.09608806]]
+Error Relatif: [[1.20515148]
+ [2.77268097]
+ [0.03956273]
+ [0.48044028]]
 Within Tolerance: [[False]
  [False]
  [ True]
  [False]]
 
-matrik acak:[[0.8125668 ]
- [0.62933329]
- [0.58456881]
- [0.97868064]]
-
-Matriks 3:
-Matriks Acak: [[0.8125668 ]
- [0.62933329]
- [0.58456881]
- [0.97868064]]
-Error Absolut: [[0.5125668 ]
- [0.42933329]
- [0.28456881]
- [0.77868064]]
-Error Relatif: [[1.70855601]
- [2.14666644]
- [0.9485627 ]
- [3.89340318]]
-Within Tolerance: [[False]
- [False]
- [False]
- [False]]
-
-matrik acak:[[0.8167731 ]
- [0.59165059]
- [0.82615174]
- [0.94500292]]
-
-Matriks 4:
-Matriks Acak: [[0.8167731 ]
- [0.59165059]
- [0.82615174]
- [0.94500292]]
-Error Absolut: [[0.5167731 ]
- [0.39165059]
- [0.52615174]
- [0.74500292]]
-Error Relatif: [[1.72257699]
- [1.95825296]
- [1.75383913]
- [3.72501462]]
-Within Tolerance: [[False]
- [False]
- [False]
- [False]]
-
-matrik acak:[[0.59160101]
- [0.55972887]
- [0.8557628 ]
- [0.31916777]]
+matrik acak:[[0.52150718]
+ [0.30437279]
+ [0.34883471]
+ [0.63809618]]
 
 Matriks 5:
-Matriks Acak: [[0.59160101]
- [0.55972887]
- [0.8557628 ]
- [0.31916777]]
-Error Absolut: [[0.29160101]
- [0.35972887]
- [0.5557628 ]
- [0.11916777]]
-Error Relatif: [[0.97200337]
- [1.79864434]
- [1.85254268]
- [0.59583885]]
+Matriks Acak: [[0.52150718]
+ [0.30437279]
+ [0.34883471]
+ [0.63809618]]
+Error Absolut: [[0.22150718]
+ [0.10437279]
+ [0.04883471]
+ [0.43809618]]
+Error Relatif: [[0.73835725]
+ [0.52186397]
+ [0.16278237]
+ [2.1904809 ]]
 Within Tolerance: [[False]
  [False]
  [False]
@@ -685,6 +696,15 @@ Within Tolerance: [[False]
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Transformasii.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Transformasi</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
